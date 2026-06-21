@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biqvora — AI & Web Solutions for Growing Businesses</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F8F8F6;
+      --navy: #0D1B2A;
+      --navy-light: #1E3448;
+      --gold: #C9A84C;
+      --grey: #E8E8E4;
+      --muted: #6B7280;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--grey);
+      padding: 0 5%;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      background: var(--navy);
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 2px;
+    }
+
+    .nav-cta:hover { background: var(--navy-light); color: var(--white) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 5% 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      max-width: 700px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--navy-light); }
+
+    .btn-secondary {
+      border: 1px solid var(--navy);
+      color: var(--navy);
+      padding: 0.85rem 2rem;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    /* GOLD DIVIDER */
+    .gold-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      margin: 0;
+    }
+
+    /* SECTION */
+    section {
+      padding: 96px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 3.5rem;
+      line-height: 1.8;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--grey);
+      border: 1px solid var(--grey);
+    }
+
+    .service-card {
+      background: var(--bg);
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .service-card::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* NUMBERS */
+    .numbers {
+      background: var(--navy);
+      padding: 72px 5%;
+    }
+
+    .numbers-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* PROCESS */
+    .process-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+      counter-reset: process;
+    }
+
+    .process-item {
+      counter-increment: process;
+    }
+
+    .process-item::before {
+      content: "0" counter(process);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .process-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .process-item p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* CTA BAND */
+    .cta-band {
+      background: var(--bg);
+      border-top: 1px solid var(--grey);
+      border-bottom: 1px solid var(--grey);
+      padding: 80px 5%;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .cta-band p {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.4);
+      padding: 2.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    footer p { font-size: 0.8rem; }
+
+    footer a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 0.8rem;
+    }
+
+    footer a:hover { color: var(--gold); }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Biq<span>vora</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Work</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">AI Integration & Web Applications</p>
+      <h1>We build software that makes your business <em>work smarter.</em></h1>
+      <p class="hero-sub">Biqvora helps small and mid-sized businesses integrate AI into their workflows and build web applications that scale — without the enterprise price tag.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn-primary">Start a Project</a>
+        <a href="portfolio.html" class="btn-secondary">See Our Work</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="gold-divider"></div>
+
+  <section>
+    <p class="section-eyebrow">What We Do</p>
+    <h2 class="section-title">Services built for real business problems</h2>
+    <p class="section-sub">We focus on outcomes, not deliverables. Every engagement starts with understanding your business, then building the right solution.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>AI Integration</h3>
+        <p>Add intelligent automation to your existing tools — chatbots, document processing, data extraction, and custom AI workflows tailored to how you work.</p>
+      </div>
+      <div class="service-card">
+        <h3>Web Application Development</h3>
+        <p>Custom web apps built to replace manual processes, connect your team, or serve your customers — designed to grow as your business does.</p>
+      </div>
+      <div class="service-card">
+        <h3>MVP Development</h3>
+        <p>Have a software idea? We take you from concept to a working product in weeks, built lean so you can validate fast and iterate faster.</p>
+      </div>
+      <div class="service-card">
+        <h3>Workflow Automation</h3>
+        <p>We identify the repetitive tasks eating your team's time and build systems that handle them — so your people can focus on what actually matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="numbers">
+    <div class="numbers-inner">
+      <div>
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div>
+        <div class="stat-num">4</div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Client Retention</div>
+      </div>
+      <div>
+        <div class="stat-num">3 wk</div>
+        <div class="stat-label">Average MVP Timeline</div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <p class="section-eyebrow">How We Work</p>
+    <h2 class="section-title">A process that keeps you in control</h2>
+    <p class="section-sub">No surprises. No scope creep. A clear process from first conversation to final delivery.</p>
+    <div class="process-list">
+      <div class="process-item">
+        <h4>Discovery Call</h4>
+        <p>We learn your business, your bottlenecks, and what success looks like for you — before writing a single line of code.</p>
+      </div>
+      <div class="process-item">
+        <h4>Scoped Proposal</h4>
+        <p>You receive a clear proposal with timeline, deliverables, and fixed pricing. No ambiguity, no hourly billing surprises.</p>
+      </div>
+      <div class="process-item">
+        <h4>Build & Review</h4>
+        <p>We build in short cycles with regular check-ins, so you see progress weekly and can give feedback early.</p>
+      </div>
+      <div class="process-item">
+        <h4>Launch & Support</h4>
+        <p>We handle deployment and stay available post-launch to make sure everything runs exactly as it should.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <div class="cta-band">
+    <h2>Ready to build something?</h2>
+    <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+    <a href="contact.html" class="btn-primary">Get in Touch</a>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Biq<span>vora</span></div>
+    <p>© 2026 Biqvora. All rights reserved.</p>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="portfolio.html">Work</a>
+      <a href="contact.html">Contact</a>
+      <a href="mailto:musab@biqvora.com">musab@biqvora.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
