@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://biqvora.com/sitemap.xml
