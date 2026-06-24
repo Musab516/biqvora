@@ -3,19 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact — Biqvora</title>
-  <meta name="description" content="Start a project with Biqvora. We respond within 24 hours. AI integration, web apps, and MVP development for SMEs.">
-  <meta name="keywords" content="AI integration, web app development, MVP development, workflow automation, software firm, custom software">
+  <title>About — Biqvora</title>
+  <meta name="description" content="Biqvora is a software firm founded by Musab Bin Majid, building AI integration and web applications for SMEs in the US, EU, and UAE.">
+  <meta name="keywords" content="AI integration, web app development, MVP development, Biqvora, Musab Bin Majid">
   <meta name="author" content="Biqvora">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Contact — Biqvora">
-  <meta property="og:description" content="Start a project with Biqvora. We respond within 24 hours. AI integration, web apps, and MVP development for SMEs.">
-  <meta property="og:url" content="https://biqvora.com/contact.html">
+  <meta property="og:title" content="About — Biqvora">
+  <meta property="og:description" content="Biqvora is a software firm building AI integration and web applications for SMEs.">
+  <meta property="og:url" content="https://biqvora.com/about.html">
   <meta property="og:image" content="https://biqvora.com/favicon.svg">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Contact — Biqvora">
-  <meta name="twitter:description" content="Start a project with Biqvora. We respond within 24 hours. AI integration, web apps, and MVP development for SMEs.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,6 +60,7 @@
       font-weight: 600;
       color: var(--navy);
       text-decoration: none;
+      letter-spacing: 0.02em;
     }
 
     .nav-logo span { color: var(--gold); }
@@ -83,7 +81,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--navy); }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
 
     .nav-cta {
       background: var(--navy);
@@ -92,17 +90,21 @@
       border-radius: 2px;
     }
 
-    .contact-layout {
+    .nav-cta:hover { background: var(--navy-light) !important; }
+
+    /* HERO */
+    .about-hero {
+      padding: 140px 5% 80px;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 140px 5% 96px;
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
+      grid-template-columns: 1fr 1fr;
       gap: 6rem;
-      align-items: start;
+      align-items: center;
+      border-bottom: 1px solid var(--grey);
     }
 
-    .contact-info .page-eyebrow {
+    .hero-left .eyebrow {
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.14em;
@@ -114,7 +116,7 @@
       gap: 0.75rem;
     }
 
-    .contact-info .page-eyebrow::before {
+    .hero-left .eyebrow::before {
       content: '';
       display: block;
       width: 24px;
@@ -122,137 +124,306 @@
       background: var(--gold);
     }
 
-    .contact-info h1 {
+    .hero-left h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 3.5vw, 2.75rem);
       font-weight: 500;
       color: var(--navy);
-      margin-bottom: 1.25rem;
       line-height: 1.2;
+      margin-bottom: 1.5rem;
     }
 
-    .contact-info p {
+    .hero-left h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-left p {
       color: var(--muted);
       line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .photo-frame {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: grayscale(15%);
+    }
+
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+      border: 1px solid var(--gold);
+      pointer-events: none;
+      aspect-ratio: 3/4;
+    }
+
+    .photo-caption {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--grey);
+    }
+
+    .photo-caption .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .photo-caption .role {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* REVIEW */
+    .review-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 5%;
+      border-bottom: 1px solid var(--grey);
+    }
+
+    .review-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
       margin-bottom: 2.5rem;
     }
 
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      border-top: 1px solid var(--grey);
-      padding-top: 2rem;
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--grey);
+      padding: 2.5rem 3rem;
+      max-width: 720px;
+      position: relative;
     }
 
-    .contact-detail-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
+    .review-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.25;
+      position: absolute;
+      top: -0.5rem;
+      left: 2rem;
+      line-height: 1;
     }
 
-    .detail-label {
+    .review-text {
+      font-size: 1rem;
+      color: var(--navy);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .review-stars {
+      color: var(--gold);
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    .review-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .review-platform {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* VALUES */
+    .values-section {
+      background: var(--navy);
+      padding: 80px 5%;
+    }
+
+    .values-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .values-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .values-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 3rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .value-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .value-item p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+    }
+
+    /* STACK */
+    .stack-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 5%;
+      border-bottom: 1px solid var(--grey);
+    }
+
+    .stack-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .stack-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .stack-sub {
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      line-height: 1.8;
+    }
+
+    .stack-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .stack-cat h5 {
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gold);
+      margin-bottom: 0.75rem;
     }
 
-    .detail-value {
-      font-size: 0.95rem;
-      color: var(--navy);
+    .stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
     }
 
-    .detail-value a {
-      color: var(--navy);
-      text-decoration: none;
-      border-bottom: 1px solid var(--grey);
-      transition: border-color 0.2s;
-    }
-
-    .detail-value a:hover { border-color: var(--gold); }
-
-    /* FORM */
-    .contact-form {
-      background: var(--white);
-      border: 1px solid var(--grey);
-      padding: 3rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--navy);
-      margin-bottom: 0.5rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: var(--bg);
-      border: 1px solid var(--grey);
-      color: var(--navy);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.925rem;
-      padding: 0.75rem 1rem;
-      border-radius: 2px;
-      outline: none;
-      transition: border-color 0.2s;
-      appearance: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--gold);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .form-submit {
-      width: 100%;
-      background: var(--navy);
-      color: var(--white);
-      border: none;
-      padding: 0.95rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      cursor: pointer;
-      border-radius: 2px;
-      transition: background 0.2s;
-      margin-top: 0.5rem;
-    }
-
-    .form-submit:hover { background: var(--navy-light); }
-
-    .form-note {
+    .stack-tag {
       font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 1rem;
+      color: var(--navy);
+      border: 1px solid var(--grey);
+      background: var(--white);
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+    }
+
+    /* CTA */
+    .cta-band {
+      background: var(--bg);
+      border-top: 1px solid var(--grey);
+      padding: 80px 5%;
       text-align: center;
     }
 
+    .cta-band h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .cta-band p {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      border-radius: 2px;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--navy-light); }
+
+    /* FOOTER */
     footer {
       background: var(--navy);
       color: rgba(255,255,255,0.4);
@@ -271,23 +442,26 @@
     }
 
     .footer-logo span { color: var(--gold); }
-
     footer p { font-size: 0.8rem; }
-
-    footer a {
-      color: rgba(255,255,255,0.4);
-      text-decoration: none;
-      font-size: 0.8rem;
-    }
-
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem; }
     footer a:hover { color: var(--gold); }
 
     @media (max-width: 768px) {
-      .contact-layout {
+      .about-hero {
         grid-template-columns: 1fr;
         gap: 3rem;
+        padding-top: 110px;
       }
-      .form-row { grid-template-columns: 1fr; }
+
+      .hero-right { max-width: 320px; }
+
+      .photo-frame::after { display: none; }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
       .nav-links { display: none; }
     }
   </style>
@@ -298,83 +472,124 @@
     <a href="index.html" class="nav-logo">Biq<span>vora</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="about.html" class="active">About</a></li>
       <li><a href="portfolio.html">Work</a></li>
       <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
     </ul>
   </nav>
 
-  <div class="contact-layout">
+  <div class="about-hero">
+    <div class="hero-left">
+      <p class="eyebrow">About Biqvora</p>
+      <h1>Built by a founder who actually <em>codes.</em></h1>
+      <p>I'm Musab — a CS student at IBA Karachi and the founder of Biqvora. I started this firm because I kept seeing small businesses pay enterprise prices for software that didn't fit them, or settle for off-the-shelf tools that slowed them down.</p>
+      <p>Biqvora exists to fix that. We build AI integrations and web applications that are scoped to your actual problem, delivered in weeks — not months — and priced for the businesses that need them most.</p>
+      <p>Every project I take on, I'm personally involved in. Not a project manager who hands it off — me, writing the code, on the call with you, invested in whether it works.</p>
+    </div>
+    <div class="hero-right">
+      <div class="photo-frame">
+        <img src="1754509582117.jpeg" alt="Musab Bin Majid — Founder, Biqvora" />
+      </div>
+      <div class="photo-caption">
+        <div class="name">Musab Bin Majid</div>
+        <div class="role">Founder & Lead Developer · Biqvora</div>
+      </div>
+    </div>
+  </div>
 
-    <div class="contact-info">
-      <p class="page-eyebrow">Get in Touch</p>
-      <h1>Let's talk about your project</h1>
-      <p>Tell us what you're building or what's slowing you down. We'll respond within 24 hours with honest advice — no sales pitch.</p>
+  <div class="review-section">
+    <p class="review-eyebrow">Client Review</p>
+    <div class="review-card">
+      <p class="review-text">Musab did a fantastic job making my website. He has an eye for good website design. The website is visually appealing and easy to navigate. It looks professional. He was easy to work with. He provided updates through each step of the project to get my approval. He responded to feedback. He would mock up different options to help me make decisions. He was a fast worker. I would highly recommend him.</p>
+      <div class="review-author">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-name">Kristen B. · United States</div>
+        <div class="review-platform">via Upwork</div>
+      </div>
+    </div>
+  </div>
 
-      <div class="contact-details">
-        <div class="contact-detail-item">
-          <span class="detail-label">Email</span>
-          <span class="detail-value"><a href="mailto:musab@biqvora.com">musab@biqvora.com</a></span>
+  <div class="values-section">
+    <div class="values-inner">
+      <p class="values-eyebrow">How We Work</p>
+      <h2 class="values-title">Three things we won't compromise on</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <h4>Honest scoping</h4>
+          <p>We tell you what's possible in your timeline and budget before we start — not after. No surprises, no scope creep, no post-launch invoices you didn't expect.</p>
         </div>
-        <div class="contact-detail-item">
-          <span class="detail-label">Response Time</span>
-          <span class="detail-value">Within 24 hours</span>
+        <div class="value-item">
+          <h4>Direct communication</h4>
+          <p>You talk to the person building your product, not an account manager. Questions get answered the same day. Problems get surfaced the moment we see them.</p>
         </div>
-        <div class="contact-detail-item">
-          <span class="detail-label">We Work With</span>
-          <span class="detail-value">US, EU & UAE based businesses</span>
-        </div>
-        <div class="contact-detail-item">
-          <span class="detail-label">Typical Project Size</span>
-          <span class="detail-value">$2,000 – $15,000</span>
+        <div class="value-item">
+          <h4>Outcomes over deliverables</h4>
+          <p>We don't consider a project done when the code is written — we consider it done when it's actually solving your problem. That difference shapes everything we build.</p>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="contact-form">
-      <form action="https://formspree.io/f/xgojwjep" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="John Smith" required />
-          </div>
-          <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" placeholder="Acme Inc." />
-          </div>
+  <div class="stack-section">
+    <p class="stack-eyebrow">Technical Stack</p>
+    <h2 class="stack-title">What we build with</h2>
+    <p class="stack-sub">Tools chosen for the job, not for the resume.</p>
+    <div class="stack-categories">
+      <div class="stack-cat">
+        <h5>Frontend</h5>
+        <div class="stack-tags">
+          <span class="stack-tag">React</span>
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">Tailwind CSS</span>
+          <span class="stack-tag">HTML/CSS</span>
+          <span class="stack-tag">TypeScript</span>
         </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="john@company.com" required />
+      </div>
+      <div class="stack-cat">
+        <h5>Backend</h5>
+        <div class="stack-tags">
+          <span class="stack-tag">FastAPI</span>
+          <span class="stack-tag">Node.js</span>
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">REST APIs</span>
         </div>
-        <div class="form-group">
-          <label for="service">What do you need?</label>
-          <select id="service" name="service">
-            <option value="">Select a service</option>
-            <option value="ai">AI Integration</option>
-            <option value="webapp">Web Application</option>
-            <option value="mvp">MVP Development</option>
-            <option value="automation">Workflow Automation</option>
-            <option value="other">Something else</option>
-          </select>
+      </div>
+      <div class="stack-cat">
+        <h5>AI & Automation</h5>
+        <div class="stack-tags">
+          <span class="stack-tag">Claude API</span>
+          <span class="stack-tag">OpenAI API</span>
+          <span class="stack-tag">LangChain</span>
+          <span class="stack-tag">pgvector / RAG</span>
+          <span class="stack-tag">Zapier</span>
         </div>
-        <div class="form-group">
-          <label for="message">Tell us about your project</label>
-          <textarea id="message" name="message" placeholder="What are you trying to build or fix? What's your timeline?" required></textarea>
+      </div>
+      <div class="stack-cat">
+        <h5>Mobile & Infra</h5>
+        <div class="stack-tags">
+          <span class="stack-tag">Flutter</span>
+          <span class="stack-tag">Firebase</span>
+          <span class="stack-tag">AWS</span>
+          <span class="stack-tag">Vercel</span>
+          <span class="stack-tag">Netlify</span>
         </div>
-        <button type="submit" class="form-submit">Send Message</button>
-        <p class="form-note">We respond to every inquiry within 24 hours.</p>
-      </form>
+      </div>
     </div>
+  </div>
 
+  <div class="cta-band">
+    <h2>Let's build something together.</h2>
+    <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+    <a href="contact.html" class="btn-primary">Start a Conversation</a>
   </div>
 
   <footer>
     <div class="footer-logo">Biq<span>vora</span></div>
     <p>© 2026 Biqvora. All rights reserved.</p>
     <div style="display:flex;gap:1.5rem;">
-      <a href="index.html">Home</a>
       <a href="portfolio.html">Work</a>
+      <a href="contact.html">Contact</a>
       <a href="mailto:musab@biqvora.com">musab@biqvora.com</a>
     </div>
   </footer>
