@@ -146,59 +146,64 @@
     }
 
     .hero-right {
-      position: relative;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .photo-frame {
-      position: relative;
-      display: inline-block;
-      width: 100%;
-    }
-
-    .photo-frame img {
-      width: 100%;
-      max-width: 400px;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      filter: grayscale(15%);
-    }
-
-    .photo-frame::after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      right: -12px;
-      width: 100%;
-      max-width: 400px;
-      height: 100%;
-      border: 1px solid var(--gold);
-      pointer-events: none;
-      aspect-ratio: 3/4;
-    }
-
-    .photo-caption {
-      margin-top: 2rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--grey);
-    }
-
-    .photo-caption .name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--navy);
-      margin-bottom: 0.2rem;
-    }
-
-    .photo-caption .role {
-      font-size: 0.8rem;
-      color: var(--gold);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+  .photo-frame {
+    position: relative;
+    width: 400px;
+    max-width: 100%;
+  }
+  
+  .photo-frame img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top center;
+    filter: grayscale(15%);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .photo-frame::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--gold);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .photo-caption {
+    width: 400px;
+    max-width: 100%;
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--grey);
+  }
+  
+  .photo-caption .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+  
+  .photo-caption .role {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
 
     /* REVIEW */
     .review-section {
