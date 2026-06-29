@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Velour Beauty Studio — Dallas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0c0a;
+      --surface: #1a1714;
+      --border: #2a2420;
+      --rose: #c9a07a;
+      --rose-light: #e8c9a8;
+      --muted: #6b5f55;
+      --text: #f0ebe4;
+      --text-dim: #9e8f82;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── SALON WEBSITE ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+      background: rgba(14,12,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 5%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 0.08em; }
+    .logo span { color: var(--rose); }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .book-btn {
+      background: var(--rose); color: var(--bg); border: none;
+      padding: 0.55rem 1.4rem; font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 8rem 5% 4rem;
+      background: radial-gradient(ellipse at 50% 60%, rgba(201,160,122,0.07) 0%, transparent 70%);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--rose); margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 400; line-height: 1.05; margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--rose-light); }
+
+    .hero p {
+      color: var(--text-dim); max-width: 480px; font-size: 1rem;
+      line-height: 1.8; margin-bottom: 2.5rem;
+    }
+
+    .hero-btns { display: flex; gap: 1rem; }
+
+    .btn-primary {
+      background: var(--rose); color: var(--bg); border: none;
+      padding: 0.85rem 2rem; font-family: 'Inter', sans-serif;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; cursor: pointer;
+    }
+
+    .btn-ghost {
+      background: transparent; color: var(--text); border: 1px solid var(--border);
+      padding: 0.85rem 2rem; font-family: 'Inter', sans-serif;
+      font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;
+    }
+
+    .services-section {
+      padding: 6rem 5%;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--rose); margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400; margin-bottom: 3rem;
+    }
+
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+    }
+
+    .service-card {
+      background: var(--surface); padding: 2rem;
+    }
+
+    .service-card::before {
+      content: ''; display: block; width: 20px; height: 1px;
+      background: var(--rose); margin-bottom: 1.25rem;
+    }
+
+    .service-card h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.4rem; }
+    .service-card p { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.75rem; }
+    .service-card .price { font-size: 0.85rem; color: var(--rose); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 5%;
+      display: flex; justify-content: space-between; align-items: center;
+      color: var(--text-dim); font-size: 0.8rem;
+    }
+
+    /* ── FLOATING CHAT ── */
+    .chat-bubble {
+      position: fixed; bottom: 28px; right: 28px; z-index: 1000;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--rose);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; box-shadow: 0 4px 24px rgba(201,160,122,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+    }
+
+    .chat-bubble:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(201,160,122,0.5); }
+
+    .chat-bubble svg { width: 24px; height: 24px; color: #0e0c0a; }
+
+    .chat-bubble .badge {
+      position: absolute; top: -2px; right: -2px;
+      width: 16px; height: 16px; background: #4ade80;
+      border-radius: 50%; border: 2px solid var(--bg);
+    }
+
+    /* CHAT WINDOW */
+    .chat-window {
+      position: fixed; bottom: 96px; right: 28px; z-index: 1000;
+      width: 360px; height: 520px;
+      background: #161210;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex; flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      transform: scale(0.9) translateY(20px);
+      opacity: 0; pointer-events: none;
+      transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+      transform-origin: bottom right;
+    }
+
+    .chat-window.open {
+      transform: scale(1) translateY(0);
+      opacity: 1; pointer-events: all;
+    }
+
+    .chat-win-header {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 0.75rem;
+      border-radius: 12px 12px 0 0;
+      background: var(--surface);
+    }
+
+    .win-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose), #8b5e3c);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: white;
+      flex-shrink: 0;
+    }
+
+    .win-info .name { font-size: 0.875rem; font-weight: 500; }
+    .win-info .status {
+      font-size: 0.7rem; color: #4ade80;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .win-info .status::before {
+      content: ''; width: 5px; height: 5px;
+      background: #4ade80; border-radius: 50%;
+    }
+
+    .win-powered {
+      margin-left: auto; font-size: 0.62rem; color: var(--muted);
+    }
+    .win-powered a { color: var(--rose); text-decoration: none; }
+
+    .win-close {
+      background: none; border: none; color: var(--muted);
+      cursor: pointer; padding: 0.25rem; font-size: 1.1rem; line-height: 1;
+    }
+
+    .chat-msgs {
+      flex: 1; overflow-y: auto; padding: 1rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      scroll-behavior: smooth;
+    }
+
+    .chat-msgs::-webkit-scrollbar { width: 3px; }
+    .chat-msgs::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .msg { display: flex; flex-direction: column; gap: 0.2rem; max-width: 85%; }
+    .msg.bot { align-self: flex-start; }
+    .msg.user { align-self: flex-end; }
+
+    .msg-bubble {
+      padding: 0.65rem 0.9rem; font-size: 0.845rem; line-height: 1.6;
+    }
+
+    .msg.bot .msg-bubble {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 2px 10px 10px 2px; color: var(--text);
+    }
+
+    .msg.user .msg-bubble {
+      background: var(--rose); color: #0e0c0a; font-weight: 500;
+      border-radius: 10px 2px 2px 10px;
+    }
+
+    .msg-time { font-size: 0.62rem; color: var(--muted); }
+    .msg.user .msg-time { text-align: right; }
+
+    .typing-ind {
+      display: flex; align-items: center; gap: 4px;
+      padding: 0.65rem 0.9rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 2px 10px 10px 2px; width: fit-content;
+    }
+
+    .t-dot {
+      width: 5px; height: 5px; background: var(--muted);
+      border-radius: 50%; animation: tdot 1.4s infinite;
+    }
+    .t-dot:nth-child(2) { animation-delay: 0.2s; }
+    .t-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes tdot {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-4px); opacity: 1; }
+    }
+
+    .quick-reps {
+      padding: 0.6rem 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .qr-btn {
+      background: transparent; border: 1px solid var(--border);
+      color: var(--text-dim); padding: 0.35rem 0.75rem;
+      font-family: 'Inter', sans-serif; font-size: 0.72rem;
+      cursor: pointer; border-radius: 20px; white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .qr-btn:hover { border-color: var(--rose); color: var(--rose); }
+
+    .chat-input-row {
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--border);
+      display: flex; gap: 0.6rem; align-items: flex-end;
+    }
+
+    .chat-inp {
+      flex: 1; background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.845rem;
+      padding: 0.6rem 0.9rem; border-radius: 2px;
+      resize: none; outline: none; min-height: 38px; max-height: 90px;
+      transition: border-color 0.2s;
+    }
+    .chat-inp:focus { border-color: var(--rose); }
+    .chat-inp::placeholder { color: var(--muted); }
+
+    .send-b {
+      background: var(--rose); color: #0e0c0a; border: none;
+      width: 38px; height: 38px; border-radius: 2px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: opacity 0.2s;
+    }
+    .send-b:hover { opacity: 0.85; }
+    .send-b:disabled { opacity: 0.35; cursor: not-allowed; }
+    .send-b svg { width: 15px; height: 15px; }
+
+    @media (max-width: 600px) {
+      .chat-window { width: calc(100vw - 32px); right: 16px; bottom: 80px; }
+      .chat-bubble { right: 16px; bottom: 16px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SALON WEBSITE -->
+<nav>
+  <div class="logo">Velour <span>Beauty</span></div>
+  <ul class="nav-links">
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Stylists</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="book-btn">Book Now</button>
+</nav>
+
+<section class="hero">
+  <p class="hero-eyebrow">Dallas, Texas · Est. 2018</p>
+  <h1>Where every visit<br>is a <em>ritual.</em></h1>
+  <p>Premium hair, skin, and beauty services. Our team of expert stylists is dedicated to making you feel extraordinary — every single time.</p>
+  <div class="hero-btns">
+    <button class="btn-primary">Book Appointment</button>
+    <button class="btn-ghost">View Services</button>
+  </div>
+</section>
+
+<section class="services-section">
+  <p class="section-label">What We Offer</p>
+  <h2 class="section-title">Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Balayage</h3>
+      <p>Hand-painted highlights for a natural, sun-kissed look.</p>
+      <div class="price">From $180</div>
+    </div>
+    <div class="service-card">
+      <h3>Cut & Style</h3>
+      <p>Precision cuts tailored to your face shape and lifestyle.</p>
+      <div class="price">From $75</div>
+    </div>
+    <div class="service-card">
+      <h3>Facial</h3>
+      <p>Customized skin treatments for a healthy, radiant glow.</p>
+      <div class="price">From $95</div>
+    </div>
+    <div class="service-card">
+      <h3>Extensions</h3>
+      <p>Length and volume with seamless, natural-looking extensions.</p>
+      <div class="price">From $250</div>
+    </div>
+    <div class="service-card">
+      <h3>Highlights</h3>
+      <p>Classic foil highlights with dimensional color results.</p>
+      <div class="price">From $120</div>
+    </div>
+    <div class="service-card">
+      <h3>Blowout</h3>
+      <p>Smooth, voluminous blowout that lasts for days.</p>
+      <div class="price">From $55</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Velour Beauty Studio · Dallas, TX</div>
+  <div>3200 McKinney Ave · (214) 555-0182</div>
+</footer>
+
+<!-- FLOATING CHAT BUBBLE -->
+<button class="chat-bubble" onclick="toggleChat()" id="chatBubble">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+  </svg>
+  <div class="badge"></div>
+</button>
+
+<!-- CHAT WINDOW -->
+<div class="chat-window" id="chatWindow">
+  <div class="chat-win-header">
+    <div class="win-avatar">V</div>
+    <div class="win-info">
+      <div class="name">Velour Receptionist</div>
+      <div class="status">Online now</div>
+    </div>
+    <div class="win-powered">AI by <a href="https://biqvora.com" target="_blank">Biqvora</a></div>
+    <button class="win-close" onclick="toggleChat()">✕</button>
+  </div>
+
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg bot">
+      <div class="msg-bubble">Hi! Welcome to Velour Beauty Studio 🌸 I can help you book an appointment, check pricing, or answer any questions. What can I help you with?</div>
+      <div class="msg-time">Just now</div>
+    </div>
+  </div>
+
+  <div class="quick-reps" id="quickReps">
+    <button class="qr-btn" onclick="sendQ('What services do you offer?')">Services & Pricing</button>
+    <button class="qr-btn" onclick="sendQ('I want to book an appointment')">Book Now</button>
+    <button class="qr-btn" onclick="sendQ('What are your hours?')">Hours</button>
+    <button class="qr-btn" onclick="sendQ('Do you offer balayage?')">Balayage</button>
+  </div>
+
+  <div class="chat-input-row">
+    <textarea class="chat-inp" id="chatInp" placeholder="Type a message..." rows="1"
+      onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+    <button class="send-b" id="sendB" onclick="sendMsg()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+const SYSTEM = `You are the AI receptionist for Velour Beauty Studio, a premium hair and beauty salon in Dallas, Texas.
+
+Services & pricing:
+- Balayage: from $180
+- Cut & Style: from $75
+- Facial: from $95
+- Hair Extensions: from $250
+- Highlights: from $120
+- Blowout: from $55
+- Color Correction: from $200
+- Deep Conditioning Treatment: from $45
+
+Hours: Tue–Sat 9am–7pm, Sun 10am–5pm, Closed Mon
+Location: 3200 McKinney Avenue, Dallas TX 75204
+Phone: (214) 555-0182
+Booking: Online at velourbeauty.com/book or call us
+
+New clients get 15% off their first visit.
+24-hour cancellation notice required.
+
+Be warm, friendly, and concise. Keep replies under 80 words unless more detail is needed. Use line breaks for readability. If you don't know something, offer to have the team follow up.`;
+
+let history = [];
+let busy = false;
+let opened = false;
+
+function toggleChat() {
+  const win = document.getElementById('chatWindow');
+  opened = !opened;
+  win.classList.toggle('open', opened);
+}
+
+function getTime() {
+  return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chatMsgs');
+  const d = document.createElement('div');
+  d.className = `msg ${role}`;
+  d.innerHTML = `<div class="msg-bubble">${text.replace(/\n/g, '<br>')}</div><div class="msg-time">${getTime()}</div>`;
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  const msgs = document.getElementById('chatMsgs');
+  const d = document.createElement('div');
+  d.className = 'msg bot'; d.id = 'typingEl';
+  d.innerHTML = `<div class="typing-ind"><div class="t-dot"></div><div class="t-dot"></div><div class="t-dot"></div></div>`;
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function hideTyping() {
+  const el = document.getElementById('typingEl');
+  if (el) el.remove();
+}
+
+async function sendMsg() {
+  const inp = document.getElementById('chatInp');
+  const text = inp.value.trim();
+  if (!text || busy) return;
+
+  inp.value = '';
+  autoResize(inp);
+  addMsg(text, 'user');
+  document.getElementById('quickReps').style.display = 'none';
+  history.push({ role: 'user', content: text });
+
+  busy = true;
+  document.getElementById('sendB').disabled = true;
+  showTyping();
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 1000,
+        system: SYSTEM,
+        messages: history
+      })
+    });
+    const data = await res.json();
+    hideTyping();
+    const reply = data.content?.[0]?.text || "Sorry, I had a moment. Please call us at (214) 555-0182.";
+    history.push({ role: 'assistant', content: reply });
+    addMsg(reply, 'bot');
+  } catch {
+    hideTyping();
+    addMsg("I'm having trouble connecting. Please call us at (214) 555-0182.", 'bot');
+  }
+
+  busy = false;
+  document.getElementById('sendB').disabled = false;
+}
+
+function sendQ(text) {
+  document.getElementById('chatInp').value = text;
+  sendMsg();
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
+}
+
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 90) + 'px';
+}
+</script>
+
+</body>
+</html>
