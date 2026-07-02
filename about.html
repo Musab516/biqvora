@@ -165,19 +165,6 @@
       filter: grayscale(15%);
     }
 
-    .photo-frame::after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      right: -12px;
-      width: 100%;
-      max-width: 400px;
-      height: 100%;
-      border: 1px solid var(--gold);
-      pointer-events: none;
-      aspect-ratio: 3/4;
-    }
-
     .photo-caption {
       margin-top: 2rem;
       padding-top: 1.25rem;
@@ -479,8 +466,6 @@
       }
 
       .hero-right { max-width: 320px; }
-
-      .photo-frame::after { display: none; }
 
       .values-grid {
         grid-template-columns: 1fr;
