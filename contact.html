@@ -282,13 +282,55 @@
 
     footer a:hover { color: var(--gold); }
 
+    /* NAV TOGGLE (hamburger) */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 200;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--navy);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     @media (max-width: 768px) {
       .contact-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
       }
       .form-row { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 68px; left: 0; right: 0; bottom: 0;
+        background: var(--bg);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 5% 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+      }
+      .nav-links.open { transform: translateX(0); }
+      .nav-links li { width: 100%; border-bottom: 1px solid var(--grey); }
+      .nav-links a { display: block; padding: 1.1rem 0; font-size: 1rem; }
+      .nav-links .nav-cta { display: inline-block; margin: 1rem 0; text-align: center; }
     }
   </style>
 </head>
@@ -296,13 +338,30 @@
 
   <nav>
     <a href="index.html" class="nav-logo">Biq<span>vora</span></a>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="portfolio.html">Work</a></li>
       <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
     </ul>
   </nav>
+  <script>
+    function toggleNav() {
+      var links = document.getElementById('nav-links');
+      var btn = document.getElementById('nav-toggle');
+      var isOpen = links.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+    document.addEventListener('click', function (e) {
+      var links = document.getElementById('nav-links');
+      if (links.classList.contains('open') && e.target.tagName === 'A') toggleNav();
+    });
+  </script>
 
   <div class="contact-layout">
 
@@ -322,11 +381,11 @@
         </div>
         <div class="contact-detail-item">
           <span class="detail-label">We Work With</span>
-          <span class="detail-value">US, EU & UAE based businesses</span>
+          <span class="detail-value">Businesses of any size, anywhere</span>
         </div>
         <div class="contact-detail-item">
-          <span class="detail-label">Typical Project Size</span>
-          <span class="detail-value">$2,000 – $15,000</span>
+          <span class="detail-label">Pricing</span>
+          <span class="detail-value">Low, scoped to your project — get in touch to find out more</span>
         </div>
       </div>
     </div>
@@ -726,12 +785,12 @@
   };
 
   /* ---- System prompt ---- */
-  const SYSTEM = `You are the friendly, knowledgeable assistant for Biqvora — a boutique software firm founded by Musab Bin Majid (CS student at IBA Karachi). You speak in a warm but professional tone that matches Biqvora's premium, honest brand voice.
+  const SYSTEM = `You are the friendly, knowledgeable assistant for Biqvora — a boutique software firm founded by Musab Bin Majid. You speak in a warm but professional tone that matches Biqvora's premium, honest brand voice.
 
 ABOUT BIQVORA:
 - Builds AI integration, web applications, MVP development, and workflow automation
-- Serves small and mid-sized businesses in the US, EU, UAE, and Pakistan
-- Typical project size: $2,000–$15,000 USD
+- Open to small and mid-sized businesses anywhere in the world
+- Pricing is scoped per project based on the work involved — no fixed public price list. Encourage them to reach out and Musab will quote based on their specific needs.
 - Average MVP timeline: ~3 weeks
 - 12+ projects delivered, 100% client retention
 - Musab is personally involved in every project — no account managers or hand-offs
