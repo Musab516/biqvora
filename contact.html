@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact — Biqvora</title>
   <meta name="description" content="Start a project with Biqvora. We respond within 24 hours. AI integration, web apps, and MVP development for SMEs.">
-  <meta name="keywords" content="AI integration, web app development, MVP development, workflow automation, software firm, custom software">
+  <meta name="keywords" content="AI integration, ERP systems, web app development, MVP development, workflow automation, software firm, custom software">
   <meta name="author" content="Biqvora">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
@@ -25,9 +25,9 @@
 
     :root {
       --bg: #F8F8F6;
-      --navy: #0D1B2A;
-      --navy-light: #1E3448;
-      --gold: #C9A84C;
+      --navy: #1B1E3D;
+      --navy-light: #2A2D5A;
+      --gold: #D85A30;
       --grey: #E8E8E4;
       --muted: #6B7280;
       --white: #FFFFFF;
@@ -58,12 +58,16 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
       font-family: 'Playfair Display', serif;
       font-size: 1.35rem;
       font-weight: 600;
       color: var(--navy);
       text-decoration: none;
     }
+    .nav-logo-mark { flex-shrink: 0; }
 
     .nav-logo span { color: var(--gold); }
 
@@ -88,9 +92,14 @@
     .nav-cta {
       background: var(--navy);
       color: var(--white) !important;
-      padding: 0.5rem 1.25rem;
-      border-radius: 2px;
+      padding: 0.55rem 1.4rem;
+      border-radius: 3px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      transition: background 0.2s ease, transform 0.15s ease;
     }
+    .nav-cta:hover { background: var(--navy-light) !important; transform: translateY(-1px); }
 
     .contact-layout {
       max-width: 1200px;
@@ -330,14 +339,22 @@
       .nav-links.open { transform: translateX(0); }
       .nav-links li { width: 100%; border-bottom: 1px solid var(--grey); }
       .nav-links a { display: block; padding: 1.1rem 0; font-size: 1rem; }
-      .nav-links .nav-cta { display: inline-block; margin: 1rem 0; text-align: center; }
+      .nav-links li:last-child { border-bottom: none; }
+      .nav-links .nav-cta { display: block; width: fit-content; margin: 1.1rem auto 0.5rem; padding: 0.7rem 1.8rem; text-align: center; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">Biq<span>vora</span></a>
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-mark" width="30" height="30" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <rect width="500" height="500" rx="100" fill="#1B1E3D"/>
+        <text x="250" y="345" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="300" fill="#FFFFFF">B</text>
+        <circle cx="368" cy="345" r="22" fill="#D85A30"/>
+      </svg>
+      <span>Biq<span>vora</span></span>
+    </a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </button>
@@ -414,6 +431,7 @@
             <option value="webapp">Web Application</option>
             <option value="mvp">MVP Development</option>
             <option value="automation">Workflow Automation</option>
+            <option value="erp">ERP Systems</option>
             <option value="other">Something else</option>
           </select>
         </div>
@@ -453,7 +471,7 @@
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #0D1B2A;
+    background: #1B1E3D;
     border: none;
     cursor: pointer;
     display: flex;
@@ -462,7 +480,7 @@
     box-shadow: 0 4px 20px rgba(13,27,42,0.35);
     transition: transform 0.2s, background 0.2s;
   }
-  #bq-launcher:hover { background: #1E3448; transform: scale(1.07); }
+  #bq-launcher:hover { background: #2A2D5A; transform: scale(1.07); }
   #bq-launcher svg { pointer-events: none; }
 
   /* Notification dot */
@@ -471,7 +489,7 @@
     top: 4px; right: 4px;
     width: 10px; height: 10px;
     border-radius: 50%;
-    background: #C9A84C;
+    background: #D85A30;
     border: 2px solid #F8F8F6;
   }
 
@@ -503,7 +521,7 @@
 
   /* Header */
   #bq-header {
-    background: #0D1B2A;
+    background: #1B1E3D;
     padding: 16px 20px;
     display: flex;
     align-items: center;
@@ -514,11 +532,11 @@
   #bq-header-left { display: flex; align-items: center; gap: 10px; }
   #bq-avatar {
     width: 34px; height: 34px; border-radius: 50%;
-    background: #1E3448;
+    background: #2A2D5A;
     display: flex; align-items: center; justify-content: center;
     font-family: 'Playfair Display', serif;
     font-size: 0.85rem;
-    color: #C9A84C;
+    color: #D85A30;
     font-weight: 600;
     flex-shrink: 0;
   }
@@ -552,7 +570,7 @@
     line-height: 0;
     transition: color 0.15s;
   }
-  #bq-close:hover { color: #C9A84C; }
+  #bq-close:hover { color: #D85A30; }
 
   /* Quick chips */
   #bq-chips {
@@ -566,7 +584,7 @@
   .bq-chip {
     background: #FFFFFF;
     border: 1px solid #E8E8E4;
-    color: #0D1B2A;
+    color: #1B1E3D;
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.03em;
@@ -576,7 +594,7 @@
     transition: border-color 0.15s, background 0.15s;
     font-family: 'Inter', sans-serif;
   }
-  .bq-chip:hover { border-color: #C9A84C; background: #FFFEF9; }
+  .bq-chip:hover { border-color: #D85A30; background: #FFFEF9; }
 
   /* Messages */
   #bq-messages {
@@ -605,20 +623,20 @@
   .bq-msg.bot .bq-bubble {
     background: #FFFFFF;
     border: 1px solid #E8E8E4;
-    color: #0D1B2A;
+    color: #1B1E3D;
   }
   .bq-msg.user .bq-bubble {
-    background: #0D1B2A;
+    background: #1B1E3D;
     color: #FFFFFF;
   }
-  .bq-msg.bot .bq-bubble a { color: #C9A84C; text-underline-offset: 2px; }
+  .bq-msg.bot .bq-bubble a { color: #D85A30; text-underline-offset: 2px; }
 
   /* Typing indicator */
   .bq-typing { display: flex; align-items: center; gap: 4px; padding: 12px 13px; }
   .bq-typing span {
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: #C9A84C;
+    background: #D85A30;
     animation: bq-bounce 1.2s infinite ease-in-out;
   }
   .bq-typing span:nth-child(2) { animation-delay: 0.2s; }
@@ -644,7 +662,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #C9A84C;
+    color: #D85A30;
     margin-bottom: 2px;
   }
   .bq-booking-form input,
@@ -653,7 +671,7 @@
     width: 100%;
     background: #F8F8F6;
     border: 1px solid #E8E8E4;
-    color: #0D1B2A;
+    color: #1B1E3D;
     font-family: 'Inter', sans-serif;
     font-size: 0.82rem;
     padding: 8px 10px;
@@ -665,10 +683,10 @@
   }
   .bq-booking-form input:focus,
   .bq-booking-form select:focus,
-  .bq-booking-form textarea:focus { border-color: #C9A84C; }
+  .bq-booking-form textarea:focus { border-color: #D85A30; }
   .bq-booking-form textarea { min-height: 64px; resize: vertical; }
   .bq-book-submit {
-    background: #0D1B2A;
+    background: #1B1E3D;
     color: #FFFFFF;
     border: none;
     padding: 9px;
@@ -681,7 +699,7 @@
     border-radius: 2px;
     transition: background 0.15s;
   }
-  .bq-book-submit:hover { background: #1E3448; }
+  .bq-book-submit:hover { background: #2A2D5A; }
   .bq-book-submit:disabled { opacity: 0.5; cursor: default; }
 
   /* Input bar */
@@ -696,7 +714,7 @@
     flex: 1;
     background: #FFFFFF;
     border: 1px solid #E8E8E4;
-    color: #0D1B2A;
+    color: #1B1E3D;
     font-family: 'Inter', sans-serif;
     font-size: 0.875rem;
     padding: 9px 12px;
@@ -704,10 +722,10 @@
     outline: none;
     transition: border-color 0.15s;
   }
-  #bq-input:focus { border-color: #C9A84C; }
+  #bq-input:focus { border-color: #D85A30; }
   #bq-input::placeholder { color: #9CA3AF; }
   #bq-send {
-    background: #0D1B2A;
+    background: #1B1E3D;
     border: none;
     cursor: pointer;
     padding: 0 13px;
@@ -718,7 +736,7 @@
     transition: background 0.15s;
     flex-shrink: 0;
   }
-  #bq-send:hover { background: #1E3448; }
+  #bq-send:hover { background: #2A2D5A; }
 
   @media (max-width: 420px) {
     #bq-window { width: calc(100vw - 24px); right: 12px; bottom: 90px; }
@@ -729,7 +747,7 @@
 <!-- Launcher button -->
 <button id="bq-launcher" aria-label="Open chat" onclick="bqToggle()">
   <span id="bq-dot"></span>
-  <svg width="24" height="24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+  <svg width="24" height="24" fill="none" stroke="#D85A30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
   </svg>
 </button>
@@ -741,7 +759,7 @@
     <div id="bq-header-left">
       <div id="bq-avatar">B</div>
       <div id="bq-header-text">
-        <span id="bq-header-name">Biq<span style="color:#C9A84C">vora</span> Assistant</span>
+        <span id="bq-header-name">Biq<span style="color:#D85A30">vora</span> Assistant</span>
         <span id="bq-header-status"><span id="bq-status-dot"></span>Online · replies instantly</span>
       </div>
     </div>
@@ -766,7 +784,7 @@
     <input id="bq-input" type="text" placeholder="Ask anything…" autocomplete="off"
       onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();bqSend()}" />
     <button id="bq-send" onclick="bqSend()" aria-label="Send">
-      <svg width="18" height="18" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <svg width="18" height="18" fill="none" stroke="#D85A30" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
       </svg>
     </button>
@@ -788,7 +806,7 @@
   const SYSTEM = `You are the friendly, knowledgeable assistant for Biqvora — a boutique software firm founded by Musab Bin Majid. You speak in a warm but professional tone that matches Biqvora's premium, honest brand voice.
 
 ABOUT BIQVORA:
-- Builds AI integration, web applications, MVP development, and workflow automation
+- Builds AI integration, ERP systems, web applications, MVP development, and workflow automation
 - Open to small and mid-sized businesses anywhere in the world
 - Pricing is scoped per project based on the work involved — no fixed public price list. Encourage them to reach out and Musab will quote based on their specific needs.
 - Average MVP timeline: ~3 weeks
@@ -802,6 +820,7 @@ SERVICES:
 2. Web Application Development — custom web apps, dashboards, portals
 3. MVP Development — concept to working product in weeks
 4. Workflow Automation — eliminating repetitive manual tasks
+5. ERP Systems — full-solution ERP builds covering inventory, finance, HR, and operations
 
 PAST PROJECTS (examples you can reference):
 - Property listings platform for UAE real estate firm (delivered in 2 weeks)
@@ -886,6 +905,7 @@ RULES:
         <option>Web Application</option>
         <option>MVP Development</option>
         <option>Workflow Automation</option>
+        <option>ERP Systems</option>
         <option>Not sure yet</option>
       </select>
       <textarea id="bq-bk-msg" placeholder="Briefly describe your project or problem…"></textarea>
