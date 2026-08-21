@@ -12,8 +12,8 @@
   <meta property="og:title" content="About — Biqvora">
   <meta property="og:description" content="Biqvora is a software firm building AI integration and web applications for SMEs.">
   <meta property="og:url" content="https://biqvora.com/about.html">
-  <meta property="og:image" content="https://biqvora.com/favicon.svg">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:image" content="https://biqvora.com/images/logo/lockup-horizontal.png">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -21,20 +21,21 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #F8F8F6;
-      --navy: #1B1E3D;
-      --navy-light: #2A2D5A;
-      --gold: #D85A30;
-      --grey: #E8E8E4;
-      --muted: #6B7280;
-      --white: #FFFFFF;
+      --bg: #0A0F24;
+      --navy: #121A3D;
+      --navy-light: #1C2657;
+      --gold: #E8752E;
+      --gold-light: #F7943A;
+      --grey: #212B5A;
+      --muted: #8B93B8;
+      --white: #F2F4FA;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
-      color: var(--navy);
+      color: var(--white);
       font-family: 'Inter', sans-serif;
       font-size: 16px;
       line-height: 1.7;
@@ -61,11 +62,11 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.35rem;
       font-weight: 600;
-      color: var(--navy);
+      color: var(--white);
       text-decoration: none;
       letter-spacing: 0.02em;
     }
-    .nav-logo-mark { flex-shrink: 0; }
+    .nav-logo-mark { flex-shrink: 0; display: block; border-radius: 7px; }
 
     .nav-logo span { color: var(--gold); }
 
@@ -85,11 +86,11 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
 
     .nav-cta {
-      background: var(--navy);
-      color: var(--white) !important;
+      background: var(--gold);
+      color: var(--bg) !important;
       padding: 0.55rem 1.4rem;
       border-radius: 3px;
       font-weight: 500;
@@ -98,7 +99,7 @@
       transition: background 0.2s ease, transform 0.15s ease;
     }
 
-    .nav-cta:hover { background: var(--navy-light) !important; transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
 
     /* HERO */
     .about-hero {
@@ -136,7 +137,7 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 3.5vw, 2.75rem);
       font-weight: 500;
-      color: var(--navy);
+      color: var(--white);
       line-height: 1.2;
       margin-bottom: 1.5rem;
     }
@@ -183,7 +184,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       font-weight: 500;
-      color: var(--navy);
+      color: var(--white);
       margin-bottom: 0.2rem;
     }
 
@@ -213,7 +214,7 @@
     }
 
     .review-card {
-      background: var(--white);
+      background: var(--navy);
       border: 1px solid var(--grey);
       padding: 2.5rem 3rem;
       max-width: 720px;
@@ -234,7 +235,7 @@
 
     .review-text {
       font-size: 1rem;
-      color: var(--navy);
+      color: var(--white);
       line-height: 1.85;
       margin-bottom: 1.5rem;
       padding-top: 1rem;
@@ -338,7 +339,7 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.5rem, 2.5vw, 2rem);
       font-weight: 500;
-      color: var(--navy);
+      color: var(--white);
       margin-bottom: 0.75rem;
     }
 
@@ -372,9 +373,9 @@
 
     .stack-tag {
       font-size: 0.78rem;
-      color: var(--navy);
+      color: var(--white);
       border: 1px solid var(--grey);
-      background: var(--white);
+      background: var(--navy);
       padding: 0.3rem 0.7rem;
       border-radius: 2px;
     }
@@ -391,7 +392,7 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.75rem, 3vw, 2.5rem);
       font-weight: 500;
-      color: var(--navy);
+      color: var(--white);
       margin-bottom: 1rem;
     }
 
@@ -404,8 +405,8 @@
     }
 
     .btn-primary {
-      background: var(--navy);
-      color: var(--white);
+      background: var(--gold);
+      color: var(--bg);
       padding: 0.85rem 2rem;
       text-decoration: none;
       font-size: 0.875rem;
@@ -416,7 +417,7 @@
       display: inline-block;
     }
 
-    .btn-primary:hover { background: var(--navy-light); }
+    .btn-primary:hover { background: var(--gold-light); }
 
     /* FOOTER */
     footer {
@@ -505,11 +506,7 @@
 
   <nav>
     <a href="index.html" class="nav-logo">
-      <svg class="nav-logo-mark" width="30" height="30" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-        <rect width="500" height="500" rx="100" fill="#1B1E3D"/>
-        <text x="250" y="345" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="300" fill="#FFFFFF">B</text>
-        <circle cx="368" cy="345" r="22" fill="#D85A30"/>
-      </svg>
+      <img class="nav-logo-mark" src="images/logo/icon-dark.png" width="30" height="30" alt="Biqvora logo" />
       <span>Biq<span>vora</span></span>
     </a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleNav()">
@@ -519,6 +516,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="portfolio.html">Work</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
     </ul>
   </nav>
@@ -669,16 +667,16 @@
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #1B1E3D;
+    background: #E8752E;
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(13,27,42,0.35);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.45);
     transition: transform 0.2s, background 0.2s;
   }
-  #bq-launcher:hover { background: #2A2D5A; transform: scale(1.07); }
+  #bq-launcher:hover { background: #F7943A; transform: scale(1.07); }
   #bq-launcher svg { pointer-events: none; }
 
   /* Notification dot */
@@ -687,8 +685,8 @@
     top: 4px; right: 4px;
     width: 10px; height: 10px;
     border-radius: 50%;
-    background: #D85A30;
-    border: 2px solid #F8F8F6;
+    background: #F2F4FA;
+    border: 2px solid #0A0F24;
   }
 
   /* ---- Chat window ---- */
@@ -699,12 +697,12 @@
     z-index: 9998;
     width: 370px;
     max-height: 580px;
-    background: #F8F8F6;
-    border: 1px solid #E8E8E4;
+    background: #121A3D;
+    border: 1px solid #212B5A;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 8px 40px rgba(13,27,42,0.18);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
     font-family: 'Inter', sans-serif;
     transform: translateY(12px);
     opacity: 0;
@@ -719,7 +717,7 @@
 
   /* Header */
   #bq-header {
-    background: #1B1E3D;
+    background: #0A0F24;
     padding: 16px 20px;
     display: flex;
     align-items: center;
@@ -730,11 +728,11 @@
   #bq-header-left { display: flex; align-items: center; gap: 10px; }
   #bq-avatar {
     width: 34px; height: 34px; border-radius: 50%;
-    background: #2A2D5A;
+    background: #1C2657;
     display: flex; align-items: center; justify-content: center;
     font-family: 'Playfair Display', serif;
     font-size: 0.85rem;
-    color: #D85A30;
+    color: #E8752E;
     font-weight: 600;
     flex-shrink: 0;
   }
@@ -743,7 +741,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #FFFFFF;
+    color: #F2F4FA;
     letter-spacing: 0.01em;
   }
   #bq-header-status {
@@ -768,7 +766,7 @@
     line-height: 0;
     transition: color 0.15s;
   }
-  #bq-close:hover { color: #D85A30; }
+  #bq-close:hover { color: #E8752E; }
 
   /* Quick chips */
   #bq-chips {
@@ -780,9 +778,9 @@
   }
   #bq-chips.hidden { display: none; }
   .bq-chip {
-    background: #FFFFFF;
-    border: 1px solid #E8E8E4;
-    color: #1B1E3D;
+    background: #1C2657;
+    border: 1px solid #212B5A;
+    color: #F2F4FA;
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.03em;
@@ -792,7 +790,7 @@
     transition: border-color 0.15s, background 0.15s;
     font-family: 'Inter', sans-serif;
   }
-  .bq-chip:hover { border-color: #D85A30; background: #FFFEF9; }
+  .bq-chip:hover { border-color: #E8752E; background: #232D63; }
 
   /* Messages */
   #bq-messages {
@@ -806,7 +804,7 @@
   }
   #bq-messages::-webkit-scrollbar { width: 4px; }
   #bq-messages::-webkit-scrollbar-track { background: transparent; }
-  #bq-messages::-webkit-scrollbar-thumb { background: #E8E8E4; border-radius: 2px; }
+  #bq-messages::-webkit-scrollbar-thumb { background: #212B5A; border-radius: 2px; }
 
   .bq-msg { display: flex; flex-direction: column; gap: 3px; max-width: 88%; }
   .bq-msg.bot { align-self: flex-start; }
@@ -819,22 +817,22 @@
     line-height: 1.65;
   }
   .bq-msg.bot .bq-bubble {
-    background: #FFFFFF;
-    border: 1px solid #E8E8E4;
-    color: #1B1E3D;
+    background: #1C2657;
+    border: 1px solid #212B5A;
+    color: #F2F4FA;
   }
   .bq-msg.user .bq-bubble {
-    background: #1B1E3D;
-    color: #FFFFFF;
+    background: #E8752E;
+    color: #0A0F24;
   }
-  .bq-msg.bot .bq-bubble a { color: #D85A30; text-underline-offset: 2px; }
+  .bq-msg.bot .bq-bubble a { color: #F7943A; text-underline-offset: 2px; }
 
   /* Typing indicator */
   .bq-typing { display: flex; align-items: center; gap: 4px; padding: 12px 13px; }
   .bq-typing span {
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: #D85A30;
+    background: #E8752E;
     animation: bq-bounce 1.2s infinite ease-in-out;
   }
   .bq-typing span:nth-child(2) { animation-delay: 0.2s; }
@@ -846,8 +844,8 @@
 
   /* Booking form inside chat */
   .bq-booking-form {
-    background: #FFFFFF;
-    border: 1px solid #E8E8E4;
+    background: #1C2657;
+    border: 1px solid #212B5A;
     border-radius: 3px;
     padding: 14px;
     display: flex;
@@ -860,16 +858,16 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #D85A30;
+    color: #E8752E;
     margin-bottom: 2px;
   }
   .bq-booking-form input,
   .bq-booking-form select,
   .bq-booking-form textarea {
     width: 100%;
-    background: #F8F8F6;
-    border: 1px solid #E8E8E4;
-    color: #1B1E3D;
+    background: #0A0F24;
+    border: 1px solid #212B5A;
+    color: #F2F4FA;
     font-family: 'Inter', sans-serif;
     font-size: 0.82rem;
     padding: 8px 10px;
@@ -881,11 +879,11 @@
   }
   .bq-booking-form input:focus,
   .bq-booking-form select:focus,
-  .bq-booking-form textarea:focus { border-color: #D85A30; }
+  .bq-booking-form textarea:focus { border-color: #E8752E; }
   .bq-booking-form textarea { min-height: 64px; resize: vertical; }
   .bq-book-submit {
-    background: #1B1E3D;
-    color: #FFFFFF;
+    background: #E8752E;
+    color: #0A0F24;
     border: none;
     padding: 9px;
     font-family: 'Inter', sans-serif;
@@ -897,22 +895,22 @@
     border-radius: 2px;
     transition: background 0.15s;
   }
-  .bq-book-submit:hover { background: #2A2D5A; }
+  .bq-book-submit:hover { background: #F7943A; }
   .bq-book-submit:disabled { opacity: 0.5; cursor: default; }
 
   /* Input bar */
   #bq-inputbar {
     padding: 12px 14px;
-    border-top: 1px solid #E8E8E4;
+    border-top: 1px solid #212B5A;
     display: flex;
     gap: 8px;
     flex-shrink: 0;
   }
   #bq-input {
     flex: 1;
-    background: #FFFFFF;
-    border: 1px solid #E8E8E4;
-    color: #1B1E3D;
+    background: #0A0F24;
+    border: 1px solid #212B5A;
+    color: #F2F4FA;
     font-family: 'Inter', sans-serif;
     font-size: 0.875rem;
     padding: 9px 12px;
@@ -920,10 +918,10 @@
     outline: none;
     transition: border-color 0.15s;
   }
-  #bq-input:focus { border-color: #D85A30; }
-  #bq-input::placeholder { color: #9CA3AF; }
+  #bq-input:focus { border-color: #E8752E; }
+  #bq-input::placeholder { color: #8B93B8; }
   #bq-send {
-    background: #1B1E3D;
+    background: #E8752E;
     border: none;
     cursor: pointer;
     padding: 0 13px;
@@ -934,7 +932,7 @@
     transition: background 0.15s;
     flex-shrink: 0;
   }
-  #bq-send:hover { background: #2A2D5A; }
+  #bq-send:hover { background: #F7943A; }
 
   @media (max-width: 420px) {
     #bq-window { width: calc(100vw - 24px); right: 12px; bottom: 90px; }
@@ -945,7 +943,7 @@
 <!-- Launcher button -->
 <button id="bq-launcher" aria-label="Open chat" onclick="bqToggle()">
   <span id="bq-dot"></span>
-  <svg width="24" height="24" fill="none" stroke="#D85A30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+  <svg width="24" height="24" fill="none" stroke="#0A0F24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
   </svg>
 </button>
@@ -957,7 +955,7 @@
     <div id="bq-header-left">
       <div id="bq-avatar">B</div>
       <div id="bq-header-text">
-        <span id="bq-header-name">Biq<span style="color:#D85A30">vora</span> Assistant</span>
+        <span id="bq-header-name">Biq<span style="color:#E8752E">vora</span> Assistant</span>
         <span id="bq-header-status"><span id="bq-status-dot"></span>Online · replies instantly</span>
       </div>
     </div>
@@ -982,7 +980,7 @@
     <input id="bq-input" type="text" placeholder="Ask anything…" autocomplete="off"
       onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();bqSend()}" />
     <button id="bq-send" onclick="bqSend()" aria-label="Send">
-      <svg width="18" height="18" fill="none" stroke="#D85A30" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <svg width="18" height="18" fill="none" stroke="#0A0F24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
       </svg>
     </button>
@@ -1011,7 +1009,7 @@ ABOUT BIQVORA:
 - 12+ projects delivered, 100% client retention
 - Musab is personally involved in every project — no account managers or hand-offs
 - Contact: musab@biqvora.com | Response time: within 24 hours
-- Website pages: Home (index.html), About (about.html), Work/Portfolio (portfolio.html), Contact (contact.html)
+- Website pages: Home (index.html), About (about.html), Work/Portfolio (portfolio.html), Case Studies (case-studies.html), Contact (contact.html)
 
 SERVICES:
 1. AI Integration — chatbots, document processing, data extraction, custom AI workflows
@@ -1028,6 +1026,8 @@ PAST PROJECTS (examples you can reference):
 - Multi-tenant business dashboard — 3 enterprise clients at launch
 - Inventory & order management for EU retail — 60% reduction in processing time
 - AI document processing pipeline — 800+ documents/month
+- Panelforge — internal operations dashboard for a logistics team (ASP.NET Core, React, SignalR)
+- Luxury Vision Real Estate — media-rich property showcase site for a Dubai agency, live at luxuryvision.ae (Next.js, Cloudinary, Supabase)
 
 PROCESS:
 1. Discovery Call → 2. Scoped Proposal (fixed price, no hourly surprises) → 3. Build & Review (weekly check-ins) → 4. Launch & Support

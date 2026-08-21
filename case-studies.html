@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="msvalidate.01" content="7C7AF7035C99979C91E8B1CDB6E1D0E8" />
-  <meta name="google-site-verification" content="f-6HVzGsM2-i3crg0-O4DAfRRVE3mZMd3L_5kc41Hhk" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Biqvora — AI, ERP & Web Solutions for Growing Businesses</title>
-  <meta name="description" content="Biqvora builds AI integration, ERP systems, and web applications for small and mid-sized businesses worldwide. Get a free consultation.">
-  <meta name="keywords" content="AI integration, ERP systems, web app development, MVP development, workflow automation, software firm, custom software">
+  <title>Case Studies — Biqvora</title>
+  <meta name="description" content="In-depth case studies of software Biqvora has built — the problem, the approach, and the result.">
+  <meta name="keywords" content="AI integration, ERP systems, web app development, MVP development, workflow automation, software firm, custom software, case studies">
   <meta name="author" content="Biqvora">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Biqvora — AI, ERP & Web Solutions for Growing Businesses">
-  <meta property="og:description" content="Biqvora builds AI integration, ERP systems, and web applications for small and mid-sized businesses worldwide. Get a free consultation.">
-  <meta property="og:url" content="https://biqvora.com">
+  <meta property="og:title" content="Case Studies — Biqvora">
+  <meta property="og:description" content="In-depth case studies of software Biqvora has built — the problem, the approach, and the result.">
+  <meta property="og:url" content="https://biqvora.com/case-studies.html">
   <meta property="og:image" content="https://biqvora.com/images/logo/lockup-horizontal.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Biqvora — AI, ERP & Web Solutions for Growing Businesses">
-  <meta name="twitter:description" content="Biqvora builds AI integration, ERP systems, and web applications for small and mid-sized businesses worldwide. Get a free consultation.">
+  <meta name="twitter:title" content="Case Studies — Biqvora">
+  <meta name="twitter:description" content="In-depth case studies of software Biqvora has built — the problem, the approach, and the result.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +45,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -74,9 +71,7 @@
     }
     .nav-logo-mark { flex-shrink: 0; display: block; border-radius: 7px; }
 
-    .nav-logo span {
-      color: var(--gold);
-    }
+    .nav-logo span { color: var(--gold); }
 
     .nav-links {
       display: flex;
@@ -94,7 +89,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
 
     .nav-cta {
       background: var(--gold);
@@ -107,277 +102,143 @@
       transition: background 0.2s ease, transform 0.15s ease;
     }
 
-    .nav-cta:hover { background: var(--gold-light); color: var(--bg) !important; transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 5% 80px;
+    .page-header {
+      padding: 140px 5% 64px;
       max-width: 1200px;
       margin: 0 auto;
+      border-bottom: 1px solid var(--grey);
     }
 
-    .hero-inner {
-      max-width: 700px;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 500;
-      line-height: 1.15;
-      color: var(--white);
-      margin-bottom: 1.75rem;
-      letter-spacing: -0.01em;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 2.5rem;
-      font-weight: 400;
-      line-height: 1.8;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--bg);
-      padding: 0.85rem 2rem;
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      border-radius: 2px;
-      transition: background 0.2s;
-    }
-
-    .btn-primary:hover { background: var(--gold-light); }
-
-    .btn-secondary {
-      border: 1px solid var(--grey);
-      color: var(--white);
-      padding: 0.85rem 2rem;
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      border-radius: 2px;
-      transition: all 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    /* GOLD DIVIDER */
-    .gold-divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, var(--gold), transparent);
-      margin: 0;
-    }
-
-    /* SECTION */
-    section {
-      padding: 96px 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
+    .page-eyebrow {
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.75rem, 3vw, 2.5rem);
-      font-weight: 500;
-      color: var(--white);
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .section-sub {
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 3.5rem;
-      line-height: 1.8;
-    }
-
-    /* SERVICES */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--grey);
-      border-left: 1px solid var(--grey);
-    }
-
-    .service-card {
-      background: var(--bg);
-      padding: 2.5rem;
-      position: relative;
-      border-right: 1px solid var(--grey);
-      border-bottom: 1px solid var(--grey);
-    }
-
-    .service-card::before {
+    .page-eyebrow::before {
       content: '';
       display: block;
       width: 24px;
-      height: 2px;
+      height: 1px;
       background: var(--gold);
-      margin-bottom: 1.5rem;
     }
 
-    .service-card h3 {
+    .page-header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 500;
       color: var(--white);
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
     }
 
-    .service-card p {
-      font-size: 0.9rem;
+    .page-header p {
       color: var(--muted);
+      max-width: 480px;
       line-height: 1.8;
     }
 
-    /* NUMBERS */
-    .numbers {
-      background: var(--navy);
-      padding: 72px 5%;
-    }
-
-    .numbers-inner {
+    .case-studies-grid {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 72px 5% 96px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 3rem;
-      text-align: center;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
     }
 
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 400;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.5rem;
+    .case-study-card {
+      display: block;
+      text-decoration: none;
+      background: var(--navy);
+      border: 1px solid var(--grey);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
-    .stat-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .case-study-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
     }
 
-    /* PROCESS */
-    .process-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2.5rem;
-      counter-reset: process;
+    .case-study-thumb {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1440 / 780;
+      object-fit: cover;
+      object-position: top;
+      border-bottom: 1px solid var(--grey);
     }
 
-    .process-item {
-      counter-increment: process;
+    .case-study-body {
+      padding: 2rem;
     }
 
-    .process-item::before {
-      content: "0" counter(process);
+    .case-study-tag {
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--gold);
-      display: block;
-      margin-bottom: 1rem;
     }
 
-    .process-item h4 {
+    .case-study-body h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
+      font-size: 1.35rem;
       font-weight: 500;
       color: var(--white);
-      margin-bottom: 0.5rem;
+      line-height: 1.3;
+      margin-top: 0.5rem;
     }
 
-    .process-item p {
-      font-size: 0.875rem;
+    .case-study-body .subhead {
+      font-size: 0.85rem;
       color: var(--muted);
-      line-height: 1.75;
+      margin-top: 0.35rem;
     }
 
-    /* CTA BAND */
-    .cta-band {
-      background: var(--bg);
-      border-top: 1px solid var(--grey);
-      border-bottom: 1px solid var(--grey);
-      padding: 80px 5%;
-      text-align: center;
+    .case-study-body p.summary {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-top: 0.9rem;
     }
 
-    .cta-band h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.75rem, 3vw, 2.5rem);
+    .case-study-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+
+    .case-study-stack .stack-tag {
+      font-size: 0.7rem;
+      color: var(--muted);
+      border: 1px solid var(--grey);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      letter-spacing: 0.04em;
+    }
+
+    .case-study-read-more {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--gold);
       font-weight: 500;
-      color: var(--white);
-      margin-bottom: 1rem;
     }
 
-    .cta-band p {
-      color: var(--muted);
-      margin-bottom: 2rem;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* FOOTER */
     footer {
       background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.06);
       color: rgba(255,255,255,0.4);
       padding: 2.5rem 5%;
       display: flex;
@@ -430,7 +291,6 @@
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       .nav-toggle { display: flex; }
       .nav-links {
@@ -450,12 +310,9 @@
       .nav-links a { display: block; padding: 1.1rem 0; font-size: 1rem; }
       .nav-links li:last-child { border-bottom: none; }
       .nav-links .nav-cta { display: block; width: fit-content; margin: 1.1rem auto 0.5rem; padding: 0.7rem 1.8rem; text-align: center; }
-      .hero { padding-top: 100px; }
-      .services-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 480px) {
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .hero-actions a { text-align: center; }
+    @media (max-width: 640px) {
+      .case-studies-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -473,7 +330,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="portfolio.html">Work</a></li>
-      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="case-studies.html" class="active">Case Studies</a></li>
       <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
     </ul>
   </nav>
@@ -492,114 +349,60 @@
     });
   </script>
 
-  <div class="hero">
-    <div class="hero-inner">
-      <p class="hero-eyebrow">AI Integration & Web Applications</p>
-      <h1>We build software that makes your business <em>work smarter.</em></h1>
-      <p class="hero-sub">Biqvora helps small and mid-sized businesses integrate AI into their workflows, run on custom ERP systems, and build web applications that scale — without the enterprise price tag.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn-primary">Start a Project</a>
-        <a href="portfolio.html" class="btn-secondary">See Our Work</a>
-      </div>
-    </div>
+  <div class="page-header">
+    <p class="page-eyebrow">In-Depth</p>
+    <h1>Case studies</h1>
+    <p>A closer look at a few products built end to end — the problem, the approach, and the result.</p>
   </div>
 
-  <div class="gold-divider"></div>
+  <div class="case-studies-grid">
 
-  <section>
-    <p class="section-eyebrow">What We Do</p>
-    <h2 class="section-title">Services built for real business problems</h2>
-    <p class="section-sub">We focus on outcomes, not deliverables. Every engagement starts with understanding your business, then building the right solution.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>AI Integration</h3>
-        <p>Add intelligent automation to your existing tools — chatbots, document processing, data extraction, and custom AI workflows tailored to how you work.</p>
+    <a href="panelforge-case-study.html" class="case-study-card">
+      <img class="case-study-thumb" src="images/panelforge/dashboard.png" alt="Panelforge dashboard showing live shipment status overview" />
+      <div class="case-study-body">
+        <span class="case-study-tag">Internal Tools · Logistics</span>
+        <h2>Panelforge</h2>
+        <p class="subhead">Internal Operations Dashboard for a Logistics Team</p>
+        <p class="summary">Replacing spreadsheet chaos with a live, auditable shipment tracker.</p>
+        <div class="case-study-stack">
+          <span class="stack-tag">ASP.NET Core</span>
+          <span class="stack-tag">React</span>
+          <span class="stack-tag">SignalR</span>
+        </div>
+        <span class="case-study-read-more">Read case study →</span>
       </div>
-      <div class="service-card">
-        <h3>Web Application Development</h3>
-        <p>Custom web apps built to replace manual processes, connect your team, or serve your customers — designed to grow as your business does.</p>
-      </div>
-      <div class="service-card">
-        <h3>MVP Development</h3>
-        <p>Have a software idea? We take you from concept to a working product in weeks, built lean so you can validate fast and iterate faster.</p>
-      </div>
-      <div class="service-card">
-        <h3>Workflow Automation</h3>
-        <p>We identify the repetitive tasks eating your team's time and build systems that handle them — so your people can focus on what actually matters.</p>
-      </div>
-      <div class="service-card">
-        <h3>ERP Systems</h3>
-        <p>Full-solution ERP builds for businesses outgrowing spreadsheets — inventory, finance, HR, and operations unified into one system built around how you actually work.</p>
-      </div>
-    </div>
-  </section>
+    </a>
 
-  <div class="numbers">
-    <div class="numbers-inner">
-      <div>
-        <div class="stat-num">12+</div>
-        <div class="stat-label">Projects Delivered</div>
+    <a href="luxuryvision-case-study.html" class="case-study-card">
+      <img class="case-study-thumb" src="images/luxuryvision/homepage.png" alt="Luxury Vision Real Estate homepage hero" />
+      <div class="case-study-body">
+        <span class="case-study-tag">Real Estate · UAE</span>
+        <h2>Luxury Vision Real Estate</h2>
+        <p class="subhead">Property Showcase Website</p>
+        <p class="summary">A media-rich real estate site built for a Dubai-based agency.</p>
+        <div class="case-study-stack">
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">Cloudinary</span>
+          <span class="stack-tag">Supabase</span>
+        </div>
+        <span class="case-study-read-more">Read case study →</span>
       </div>
-      <div>
-        <div class="stat-num">4</div>
-        <div class="stat-label">Countries Served</div>
-      </div>
-      <div>
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Client Retention</div>
-      </div>
-      <div>
-        <div class="stat-num">3 wk</div>
-        <div class="stat-label">Average MVP Timeline</div>
-      </div>
-    </div>
-  </div>
+    </a>
 
-  <section>
-    <p class="section-eyebrow">How We Work</p>
-    <h2 class="section-title">A process that keeps you in control</h2>
-    <p class="section-sub">No surprises. No scope creep. A clear process from first conversation to final delivery.</p>
-    <div class="process-list">
-      <div class="process-item">
-        <h4>Discovery Call</h4>
-        <p>We learn your business, your bottlenecks, and what success looks like for you — before writing a single line of code.</p>
-      </div>
-      <div class="process-item">
-        <h4>Scoped Proposal</h4>
-        <p>You receive a clear proposal with timeline, deliverables, and fixed pricing. No ambiguity, no hourly billing surprises.</p>
-      </div>
-      <div class="process-item">
-        <h4>Build & Review</h4>
-        <p>We build in short cycles with regular check-ins, so you see progress weekly and can give feedback early.</p>
-      </div>
-      <div class="process-item">
-        <h4>Launch & Support</h4>
-        <p>We handle deployment and stay available post-launch to make sure everything runs exactly as it should.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="gold-divider"></div>
-
-  <div class="cta-band">
-    <h2>Ready to build something?</h2>
-    <p>Tell us about your project and we'll get back to you within 24 hours.</p>
-    <a href="contact.html" class="btn-primary">Get in Touch</a>
   </div>
 
   <footer>
     <div class="footer-logo">Biq<span>vora</span></div>
     <p>© 2026 Biqvora. All rights reserved.</p>
     <div style="display:flex;gap:1.5rem;">
+      <a href="index.html">Home</a>
       <a href="portfolio.html">Work</a>
-      <a href="contact.html">Contact</a>
       <a href="mailto:musab@biqvora.com">musab@biqvora.com</a>
     </div>
   </footer>
 
 <!-- ============================================================
-     BIQVORA CHAT WIDGET — drop this block just before </body>
-     on index.html, about.html, portfolio.html, and contact.html
+     BIQVORA CHAT WIDGET
      ============================================================ -->
 
 <style>
@@ -939,7 +742,7 @@
   /* ---- State ---- */
   const BQ = {
     open: false,
-    history: [],       // [{role, content}] for the Claude API
+    history: [],
     loading: false,
   };
 
@@ -1148,7 +951,6 @@ RULES:
     bqEl('bq-window').classList.toggle('open', BQ.open);
     bqEl('bq-dot').style.display = BQ.open ? 'none' : '';
 
-    // Show greeting on first open
     if (BQ.open && BQ.history.length === 0) {
       setTimeout(() => {
         bqAppendMsg('bot', 'Hi! I\'m the Biqvora assistant. I can answer questions about our services, pricing, and past work — or help you book a free consultation with Musab. What can I help you with?', false);
